@@ -15,7 +15,7 @@ void setup() {
 
 void loop() {
   // constantly seeing if button is being pressed
-  switchState = digitalRead(8);
+  switchState = digitalRead(switchPin);
   // if it is switch go to 1,
   int go = 0;
   if(switchState == HIGH){

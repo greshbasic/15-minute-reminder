@@ -3,8 +3,8 @@ unsigned long previousTime = 0;
 int switchState = 0;
 int prevSwitchState = 0;
 int led = 2;
-long interval = 128571;
-// long interval = 1000; // testing interval
+//long interval = 128571;
+long interval = 128571; // testing interval
 
 void setup() {
   // preping all pins
@@ -15,7 +15,7 @@ void setup() {
 
 void loop() {
   // constantly seeing if button is being pressed
-  switchState = digitalRead(switchPin);
+  switchState = digitalRead(8);
   // if it is switch go to 1,
   int go = 0;
   if(switchState == HIGH){
@@ -32,6 +32,17 @@ void loop() {
       digitalWrite(led, HIGH);
       led++;
       if(led == 9){
+        for(int i = 0; i < 10; i++){
+          for(int i = 2; i < 9; i++){
+            digitalWrite(i, LOW);
+          }
+          delay(250);
+          for(int i = 2; i < 9; i++){
+            digitalWrite(i, HIGH);
+          }
+          delay(250);
+
+        }
         for(int i = 2; i < 8; i++){
           digitalWrite(i,LOW);
           led = 2;

@@ -3,7 +3,6 @@ unsigned long previousTime = 0;
 int switchState = 0;
 int prevSwitchState = 0;
 int led = 2;
-//long interval = 128571;
 long interval = 128571; // testing interval
 
 void setup() {
@@ -33,18 +32,18 @@ void loop() {
       led++;
       if(led == 9){
         for(int i = 0; i < 10; i++){
-          for(int i = 2; i < 9; i++){
-            digitalWrite(i, LOW);
+          for(int j = 2; j < 9; j++){
+            digitalWrite(j, LOW);
           }
           delay(250);
-          for(int i = 2; i < 9; i++){
-            digitalWrite(i, HIGH);
+          for(int j = 2; j < 9; j++){
+            digitalWrite(j, HIGH);
           }
           delay(250);
 
         }
         for(int i = 2; i < 8; i++){
-          digitalWrite(i,LOW);
+          digitalWrite(i, LOW);
           led = 2;
         }
         go = 0;

@@ -40,7 +40,6 @@ void loop() {
             digitalWrite(j, HIGH);
           }
           delay(250);
-
         }
         for(int i = 2; i < 8; i++){
           digitalWrite(i, LOW);
